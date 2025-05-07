@@ -9,7 +9,7 @@
         @foreach ($services as $service)
         <li>
             <a href="/services/{{ $service['id'] }}">
-            <strong>{{ $service['title'] }}: </strong> description {{ $service['description'] }}
+            <strong>{{ $service['title'] }}: </strong> {{ $service['description'] }}
             </a>
         </li>
         @endforeach
