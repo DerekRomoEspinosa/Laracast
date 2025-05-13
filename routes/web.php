@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Models\service;
 
 
-
     Route::get('/', function () {
     return view('home');
 });
