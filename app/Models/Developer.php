@@ -9,4 +9,11 @@ class Developer extends Model
 {
     /** @use HasFactory<\Database\Factories\DeveloperFactory> */
     use HasFactory;
+
+        public function services()
+        {
+            return $this->hasMany(service::class);
+
+        }
+
 }

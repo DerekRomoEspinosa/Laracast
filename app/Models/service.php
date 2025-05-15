@@ -12,4 +12,9 @@ class service extends Model {
 
     protected $fillable = ['title', 'description'];
 
+    public function developer()
+    {
+        return $this->belongsTo(developer::class);
+    }
+
 }
