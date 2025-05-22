@@ -17,4 +17,9 @@ class service extends Model {
         return $this->belongsTo(developer::class);
     }
 
+        public function tags()
+        {
+            return $this->belongsToMany(Tag::class, foreignPivotKey: "service_listing_id");
+        }
+
 }

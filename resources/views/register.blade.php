@@ -4,3 +4,4 @@
     </x-slot:heading>
     <h1>Register</h1>
 </x-layout>
+

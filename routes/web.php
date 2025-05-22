@@ -9,18 +9,28 @@ use App\Models\service;
 });
 
 
+//Muestra todos los servicio
 Route::get('/services', function ()  {
-    return view('services', [
-        'services' => service::all()
+    $services = service::with('developer')->simplePaginate(5);
+
+    return view('services.index', [
+        'services' => $services
     ]);
 });
 
+Route::get('/services/create', function () {
+    return view('services.create');
+});
 
+
+//Muestra un solo trabajo
 Route::get('/services/{id}', function ($id) {
     $service = service::find($id);
 
-         return view('service', ['service' => $service]);
+         return view('services.show', ['service' => $service]);
 });
+
+
 
 
 

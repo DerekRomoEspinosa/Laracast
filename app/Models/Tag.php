@@ -9,4 +9,9 @@ class Tag extends Model
 {
     /** @use HasFactory<\Database\Factories\TagFactory> */
     use HasFactory;
+
+    public function service()
+    {
+        return $this->belongsToMany(service::class, relatedPivotKey: "service_listing_id");
+    }
 }
