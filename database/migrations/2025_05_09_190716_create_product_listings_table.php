@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('service_listings', function (Blueprint $table) {
+        Schema::create('product_listings', function (Blueprint $table) {
             $table->id();
-            // $table->unsignedBigInteger('employer_id');
             $table->foreignIdFor(\App\Models\Developer::class);
             $table->string('title');
             $table->string('description');
+            $table->string('image')->nullable();
+            $table->string('price')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('service_listings');
+        Schema::dropIfExists('product_listings');
     }
 };

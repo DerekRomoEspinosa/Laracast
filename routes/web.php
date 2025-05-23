@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 use App\Models\service;
 
@@ -10,24 +11,24 @@ use App\Models\service;
 
 
 //Muestra todos los servicio
-Route::get('/services', function ()  {
-    $services = service::with('developer')->simplePaginate(5);
+Route::get('/products', function ()  {
+    $products = Product::with('developer')->simplePaginate(5);
 
-    return view('services.index', [
-        'services' => $services
+    return view('products.index', [
+        'products' => $products
     ]);
 });
 
-Route::get('/services/create', function () {
-    return view('services.create');
+Route::get('/products/create', function () {
+    return view('products.create');
 });
 
 
 //Muestra un solo trabajo
-Route::get('/services/{id}', function ($id) {
-    $service = service::find($id);
+Route::get('/products/{id}', function ($id) {
+    $product = Product::find($id);
 
-         return view('services.show', ['service' => $service]);
+         return view('products.show', ['product' => $product]);
 });
 
 

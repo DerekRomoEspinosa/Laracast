@@ -17,9 +17,9 @@
                 $table->timestamps();
             });
 
-            Schema::create('service_tag', function (Blueprint $table) {
+            Schema::create('product_tag', function (Blueprint $table) {
                 $table->id();
-                $table->foreignIdFor(\App\Models\service::class, 'service_listing_id')->constrained()->cascadeOnDelete();
+                $table->foreignIdFor(\App\Models\Product::class, 'product_listing_id')->constrained()->cascadeOnDelete();
                 $table->foreignIdFor(\App\Models\Tag::class)->constrained()->cascadeOnDelete();
                 $table->timestamps();
             });
@@ -31,6 +31,6 @@
         public function down(): void
         {
             Schema::dropIfExists('tags');
-            Schema::dropIfExists('service_tag');
+            Schema::dropIfExists('product_tag');
         }
     };

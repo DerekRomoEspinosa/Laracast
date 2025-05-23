@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot name="heading">
-        Create Service
+        Crear Producto
     </x-slot>
 
     <form>

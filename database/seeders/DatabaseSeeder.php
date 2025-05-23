@@ -3,10 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use Database\Factories\ServiceFactory;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\service;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,12 +15,12 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-
+    //Para crear un usuario de prueba
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
 
-        $this->call(ServiceSeeder::class);
+        $this->call(ProductSeeder::class);
     }
 }

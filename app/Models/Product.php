@@ -2,13 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-class service extends Model {
+class Product extends Model
+
+{
     use HasFactory;
 
-    protected $table = 'service_listings';
+    protected $table = 'product_listings';
 
     protected $fillable = ['title', 'description'];
 
@@ -19,7 +21,8 @@ class service extends Model {
 
         public function tags()
         {
-            return $this->belongsToMany(Tag::class, foreignPivotKey: "service_listing_id");
+            return $this->belongsToMany(Tag::class, foreignPivotKey: "product_listing_id");
         }
 
 }
+

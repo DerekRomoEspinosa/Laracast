@@ -10,7 +10,7 @@ use function PHPUnit\Framework\returnSelf;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Service>
  */
-class ServiceFactory extends Factory
+class ProductFactory extends Factory
 {
     /**
      * Define the model's default state.

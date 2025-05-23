@@ -12,7 +12,7 @@ class Developer extends Model
 
         public function services()
         {
-            return $this->hasMany(service::class);
+            return $this->hasMany(product::class);
 
         }
 
