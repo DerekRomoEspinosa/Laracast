@@ -1,7 +1,7 @@
 <x-layout>
     <x-slot:heading>
-        Login Page
+        Iniciar sesion
     </x-slot:heading>
-    <h1>login</h1>
+    <h1>Iniciar sesion</h1>
 </x-layout>
 

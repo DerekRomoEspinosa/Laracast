@@ -10,8 +10,8 @@ class Tag extends Model
     /** @use HasFactory<\Database\Factories\TagFactory> */
     use HasFactory;
 
-    public function service()
+    public function product()
     {
-        return $this->belongsToMany(service::class, relatedPivotKey: "service_listing_id");
+        return $this->belongsToMany(product::class, relatedPivotKey: "product_listing_id");
     }
 }

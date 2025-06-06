@@ -1,7 +1,7 @@
 <x-layout>
     <x-slot:heading>
-        Register Page
+        Registrate
     </x-slot:heading>
-    <h1>Register</h1>
+    <h1>Registrate</h1>
 </x-layout>
 

@@ -6,23 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
-
 {
     use HasFactory;
 
-    protected $table = 'product_listings';
+    protected $table = 'products';
 
-    protected $fillable = ['title', 'description'];
+    protected $fillable = ['title', 'description', 'price', 'image', 'brand_id'];
 
-    public function developer()
+    public function brand()
     {
-        return $this->belongsTo(developer::class);
+        return $this->belongsTo(Brand::class);
     }
-
-        public function tags()
-        {
-            return $this->belongsToMany(Tag::class, foreignPivotKey: "product_listing_id");
-        }
-
 }
-

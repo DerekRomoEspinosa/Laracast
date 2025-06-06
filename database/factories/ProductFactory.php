@@ -1,28 +1,25 @@
 <?php
 
 namespace Database\Factories;
-use App\Models\Developer;
 
-
+use App\Models\Product;
+use App\Models\Brand;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use function PHPUnit\Framework\returnSelf;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Service>
- */
 class ProductFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
+    protected $model = Product::class;
+
     public function definition(): array
     {
         return [
-            'title' => fake()->jobTitle(),
-            'developer_id' => Developer::factory(),
-            'description' => 'holahola'
+            'title' => fake()->words(3, true),
+            'description' => fake()->paragraph(),
+            'price' => fake()->randomFloat(2, 10, 500),
+            'image' => fake()->imageUrl(640, 480, 'products'),
+            'brand_id' => Brand::factory(),
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
     }
 }
