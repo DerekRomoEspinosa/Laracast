@@ -1,6 +1,6 @@
 <x-layout meta-title="Editar producto" meta-description="editar producto">
     <x-slot:heading>
-        Editar: {{ $product->title }}
+     {{ $product->title }}
     </x-slot:heading>
 
     <h2 class="text-2xl font-bold mb-4 text-center">Editar Producto</h2>
